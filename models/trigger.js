@@ -58,5 +58,5 @@ module.exports = {
      * @property indexes
      * @type {Array}
      */
-    indexes: [{ fields: ['dest'] }, { fields: ['src'] }]
+    indexes: [{ fields: [{ attribute: 'dest', length: 64 }] }, { fields: [{ attribute: 'src', length: 64 }] }]
 };
