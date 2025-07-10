@@ -24,16 +24,16 @@ const SCHEMA_QUERY = Joi.object()
             .default('preview')
             .label('Flag to trigger type either to download or preview'),
         timestamp: Joi.boolean().optional().default(false).description('Enable timestamp in logs'),
-        timezone: Joi.string()
-            .optional()
-            .default('UTC')
-            .description('TimeZone of timestamp in logs')
-            .example('Asia/Tokyo'),
         timestampFormat: Joi.string()
             .valid('full-time', 'simple-time', 'elapsed-build', 'elapsed-step')
             .optional()
             .default('full-time')
-            .description('TimeStamp format at the head of the log')
+            .description('TimeStamp format at the head of the log'),
+        timezone: Joi.string()
+            .optional()
+            .default('UTC')
+            .description('TimeZone of timestamp in logs')
+            .example('Asia/Tokyo')
     })
     .label('Query Parameters');
 
