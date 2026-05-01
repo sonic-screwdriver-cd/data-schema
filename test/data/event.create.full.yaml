@@ -1,5 +1,6 @@
 # Event Create Example
 startFrom: main
+startAction: "START"
 parentBuildId: 123
 parentEventId: 123456
 groupEventId: 123456

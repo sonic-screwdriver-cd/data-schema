@@ -20,6 +20,19 @@ const STATUSES = [
     'SUCCESS'
 ];
 
+const START_ACTIONS = [
+    'start', // Start a new event from specific job
+    'restart' // Restart event from specific job
+    // If you need to identify whether to start from the `~commit` or from a specific job, please uncomment this line and use it.
+    // 'FULL_START', // Start a new event from "~commit"
+];
+
+const startAction = Joi.string()
+    .valid(...START_ACTIONS)
+    .max(10)
+    .description('Start method of the event')
+    .example('START');
+
 const MODEL = {
     id: Joi.number().integer().positive().description('Identifier of this event').example(123345),
     parentEventId: Joi.number()
@@ -80,7 +93,7 @@ const MODEL = {
         .required()
 };
 
-const CREATE_MODEL = { ...MODEL, buildId, parentBuildId, parentBuilds, prNum };
+const CREATE_MODEL = { ...MODEL, startAction, buildId, parentBuildId, parentBuilds, prNum };
 
 module.exports = {
     /**
@@ -152,6 +165,7 @@ module.exports = {
             [
                 'pipelineId',
                 'startFrom',
+                'startAction',
                 'buildId',
                 'causeMessage',
                 'parentBuildId',
