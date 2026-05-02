@@ -1,6 +1,6 @@
 # Event Create Example
 startFrom: main
-startAction: "START"
+startAction: "START_FROM_BUILD"
 parentBuildId: 123
 parentEventId: 123456
 groupEventId: 123456

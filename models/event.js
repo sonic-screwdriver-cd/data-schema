@@ -23,11 +23,11 @@ const STATUSES = [
 const START_ACTIONS = [
     'START_FROM_LATEST_COMMIT', // Start a new event from latest commit (e.g., Start from "~commit")
     // Case of using parentEventId (e.g., Workflow graph tooltip)
-    'START_FROM_PARENT_EVENT', // Start a new event from specific parent event
-    'RESTART_FROM_PARENT_EVENT', // Restart a new event from specific parent event
+    'START_FROM_EVENT', // Start a new event from specific parent event
+    'RESTART_FROM_EVENT', // Restart a new event from specific parent event
     // Case of using parentBuildId (e.g., Job list view and build log page)
-    'START_FROM_PARENT_BUILD', // Start a new event from specific parent build
-    'RESTART_FROM_PARENT_BUILD' // Restart a new event from specific parent build
+    'START_FROM_BUILD', // Start a new event from specific parent build
+    'RESTART_FROM_BUILD' // Restart a new event from specific parent build
 ];
 
 const startAction = Joi.string()
