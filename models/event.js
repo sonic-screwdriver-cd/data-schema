@@ -21,17 +21,20 @@ const STATUSES = [
 ];
 
 const START_ACTIONS = [
-    'start', // Start a new event from specific job
-    'restart' // Restart event from specific job
-    // If you need to identify whether to start from the `~commit` or from a specific job, please uncomment this line and use it.
-    // 'FULL_START', // Start a new event from "~commit"
+    'START_FROM_LATEST_COMMIT', // Start a new event from latest commit (e.g., Start from "~commit")
+    // Case of using parentEventId (e.g., Workflow graph tooltip)
+    'START_FROM_PARENT_EVENT', // Start a new event from specific parent event
+    'RESTART_FROM_PARENT_EVENT', // Restart a new event from specific parent event
+    // Case of using parentBuildId (e.g., Job list view and build log page)
+    'START_FROM_PARENT_BUILD', // Start a new event from specific parent build
+    'RESTART_FROM_PARENT_BUILD' // Restart a new event from specific parent build
 ];
 
 const startAction = Joi.string()
     .valid(...START_ACTIONS)
     .max(10)
     .description('Start method of the event')
-    .example('START');
+    .example('START_FROM_PARENT_EVENT');
 
 const MODEL = {
     id: Joi.number().integer().positive().description('Identifier of this event').example(123345),
