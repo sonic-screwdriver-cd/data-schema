@@ -22,11 +22,10 @@ const STATUSES = [
 
 const START_ACTIONS = [
     'START_FROM_LATEST_COMMIT', // Start a new event from latest commit (e.g., Start from "~commit")
-    // Case of using parentEventId (e.g., Workflow graph tooltip)
+    // Case of using parentEventId (e.g., v2 UI workflow graph tooltip)
     'START_FROM_EVENT', // Start a new event from specific parent event
     'RESTART_FROM_EVENT', // Restart a new event from specific parent event
-    // Case of using parentBuildId (e.g., Job list view and build log page)
-    'START_FROM_BUILD', // Start a new event from specific parent build
+    // Case of using buildId (e.g., Job list view, v1 UI workflow graph tooltip, and build log page)
     'RESTART_FROM_BUILD' // Restart a new event from specific parent build
 ];
 
