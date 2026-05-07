@@ -31,7 +31,7 @@ const START_ACTIONS = [
 
 const startAction = Joi.string()
     .valid(...START_ACTIONS)
-    .max(10)
+    .max(24)
     .description('Start method of the event')
     .example('START_FROM_PARENT_EVENT');
 
