@@ -21,7 +21,7 @@ const STATUSES = [
 ];
 
 const START_ACTIONS = [
-    'START_FROM_LATEST_COMMIT', // Start a new event from latest commit (e.g., Start from "~commit")
+    'START_FROM_LATEST_COMMIT', // Start a new event from latest commit (e.g., Start from "~commit", Start by buildPeriodically annotation)
     // Case of using parentEventId (e.g., v2 UI workflow graph tooltip)
     'START_FROM_EVENT', // Start a new event from specific parent event
     'RESTART_FROM_EVENT', // Restart a new event from specific parent event
